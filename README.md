@@ -1,75 +1,16 @@
-# trustsphere-frontend
-# TrustSphere – Trust Organization Management System
+# React + Vite
 
-TrustSphere is a frontend-based Trust Organization Management System developed using React JS. The application helps trust organizations efficiently manage donations, beneficiaries, events, and organizational operations through a modern and responsive dashboard interface.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
+Currently, two official plugins are available:
 
-* Multi-page navigation using React Router DOM
-* Dashboard overview with statistics and charts
-* Donation Management (Add, Edit, Delete, View)
-* Beneficiary Management System
-* Event Management Module
-* Search and Filter functionality
-* Local Storage data persistence
-* Dark/Light mode support (optional)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Tech Stack
+## React Compiler
 
-* Tailwind CSS
-* React JS
-* React Router DOM
-* React Hooks (useState, useEffect)
-* Recharts
-* Local Storage
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Pages Included
+## Expanding the ESLint configuration
 
-1. Landing Page
-2. Dashboard
-3. Donation Management
-4. Beneficiary Management
-5. Event Management
-6. Search & Filter Page
-
-## Dashboard Overview
-
-The dashboard displays:
-
-* Total Donations
-* Active Beneficiaries
-* Upcoming Events
-* Charts and quick statistics
-
-## CRUD Functionality
-
-The system supports full CRUD operations:
-
-* Create records
-* Read/View records
-* Update existing records
-* Delete records
-
-## Data Persistence
-
-All application data is stored in browser local storage to simulate backend persistence.
-
-## Future Improvements
-
-* Backend integration
-* Authentication system
-* Volunteer management
-* Advanced analytics
-* Calendar integration
-
-## Installation
-
-```bash
-npm install
-npm run dev
-```
-
-## Project Purpose
-
-This project was developed to simulate a real-world Trust Organization Management System while focusing on frontend architecture, UI/UX design, routing, and state management using React.
-
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
