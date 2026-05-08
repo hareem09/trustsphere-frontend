@@ -15,8 +15,8 @@ function Home() {
      </ul>
     </nav>
       <main>
-        <img src={img} alt="Home" className='w-full h-screen -z-40 relative' />
-         <section className='absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center'>
+        <img src={img} alt="Home" className='w-full h-screen md:-z-40 relative' />
+         <section className='absolute w-[90%] top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center'>
            <h1 className='text-4xl font-bold text-white'>Welcome to TrustSphere</h1>
            <p className='text-lg text-white mt-4 tex-2xl'>Your trusted source for all things related to trust and security.</p>
             <p className='text-white mt-4 text-xl text-justify'>TrustSphere is a frontend-based Trust Organization Management System built with React. It provides a professional dashboard to manage donations, beneficiaries, and events with full CRUD functionality using local storage. The application features multi-page navigation, responsive UI, and user-friendly data handling, simulating a real-world organizational management system.
