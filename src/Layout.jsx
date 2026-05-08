@@ -10,7 +10,7 @@ function Layout() {
   }
   return (
     <>
-    <div className='flex '>
+    <div className='md:flex '>
      <SideBar />
      
      <main className='w-full bg-gray-200 ' >
