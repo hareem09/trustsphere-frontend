@@ -115,7 +115,7 @@ function Donation() {
     }>
         <h2 className="text-center font-bold text-2xl">Donation Management</h2>
         <h3 className="font-bold">Records:</h3>
-        <section className="flex justify-center">
+        <section className="flex md:justify-center">
         <table className=" bg-gray-100 rounded-2xl w-2/4 mt-4 shadow-2xl shadow-gray-600" className={
       mode === 'light'
         ? 'bg-gray-100 text-black'
@@ -130,17 +130,17 @@ function Donation() {
               <th>Date</th>
             </tr>
           </thead>
-          <tbody className="p-4 m-3">
+          <tbody className="md:p-4 md:m-3">
             {donationData.map((donation) => (
-              <tr key={donation.id} className="p-4">
-                <td className="p-2">{donation.id}</td>
-                <td className="p-2 text-center">{donation.donorName}</td>
-                <td className="p-2">{donation.amount}</td>
-                <td className="p-2 text-center">{donation.purpose}</td>
-                <td className="p-2">{donation.date}</td>
+              <tr key={donation.id} className="md:p-4">
+                <td className="md:p-2">{donation.id}</td>
+                <td className="md:p-2 text-center">{donation.donorName}</td>
+                <td className="md:p-2">{donation.amount}</td>
+                <td className="md:p-2 text-center">{donation.purpose}</td>
+                <td className="md:p-2">{donation.date}</td>
                 <td>
                   <button
-                    className="p-1 m-1 text-gray-200 rounded-lg border-2 border-sky-300 bg-sky-500 hover:bg-sky-300 cursor-pointer"
+                    className="md:p-1 md:m-1 text-gray-200 rounded-lg border-2 border-sky-300 bg-sky-500 hover:bg-sky-300 cursor-pointer"
                     onClick={() => handleEdit(donation.id)}
                   >
                     Edit
@@ -148,7 +148,7 @@ function Donation() {
                 </td>
                 <td>
                   <button
-                    className="p-1 m-1 text-gray-200 rounded-lg border-2 border-red-300 bg-red-500 hover:bg-red-300 cursor-pointer"
+                    className="md:p-1 md:m-1 text-gray-200 rounded-lg border-2 border-red-300 bg-red-500 hover:bg-red-300 cursor-pointer"
                     onClick={() => handleDelete(donation.id)}
                   >
                     Delete
@@ -162,7 +162,7 @@ function Donation() {
         <h3 className="font-bold mt-4">Add New Donation:</h3>
         <form
           onSubmit={handleSubmit}
-          className="w-full flex justify-center flex-1"
+          className="w-full md:flex justify-center flex-1"
         >
           <div className="w-full flex items-center flex-col gap-4 mt-4 ">
             <label htmlFor="id">ID:</label>
