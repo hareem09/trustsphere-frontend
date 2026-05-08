@@ -6,7 +6,7 @@ function Dashboard() {
   
   return (
     <>
-    <main className="w-full" >
+    <main className="w-full min-h-lvh" >
     <DashboardTab/>
     </main>
     </>
