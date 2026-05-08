@@ -57,7 +57,7 @@ function DashboardTab({button}) {
   }
   return ( 
     <>
-    <main className="w-[90%] min-h-100vh bg-gray-200" className={
+    <main className="md:w-[90%] min-h-lvh bg-gray-200" className={
       mode === 'light'
         ? 'bg-gray-200 text-black'
         : 'bg-gray-800 text-gray-200 '
