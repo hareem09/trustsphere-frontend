@@ -108,7 +108,7 @@ function Donation() {
   }
   return (
     <>
-      <main className=" ml-4 h-100vh" className={
+      <main className=" md:ml-4 h-lvh" className={
       mode === 'light'
         ? 'bg-gray-200 text-black'
         : 'bg-gray-800 text-gray-200 '
