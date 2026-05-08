@@ -91,7 +91,7 @@ function Beneficiery() {
   }
   return (
     <>
-      <main className=" ml-4 h-100vh" className={
+      <main className=" md:ml-4 md:h-lvh min-h-5/6 " className={
       mode === 'light'
         ? 'bg-gray-200 text-black'
         : 'bg-gray-800 text-gray-200 '
@@ -100,8 +100,8 @@ function Beneficiery() {
           Beneficiery Management
         </h2>
         <h3 className="font-bold">Records:</h3>
-        <section className="flex justify-center">
-          <table className=" bg-gray-100 rounded-2xl w-2/4 mt-4 shadow-2xl shadow-gray-600"className={
+        <section className="flex md:justify-center">
+          <table className=" bg-gray-100 text-sm md:text-lg rounded-2xl w-2/4 mt-4 shadow-2xl shadow-gray-600"className={
       mode === 'light'
         ? 'bg-gray-100 text-black'
         : 'bg-gray-800 text-gray-200 '
@@ -115,17 +115,17 @@ function Beneficiery() {
                 <th>isActive</th>
               </tr>
             </thead>
-            <tbody className="p-4 m-3" >
+             <tbody className="md:p-4 md:m-3" >
               {beneficieryData.map((beneficiery) => (
-                <tr key={beneficiery.id} className="p-4">
-                  <td className="p-2">{beneficiery.id}</td>
-                  <td className="p-2 text-center">{beneficiery.name}</td>
-                  <td className="p-2">{beneficiery.category}</td>
-                  <td className="p-2 text-center">{beneficiery.supportType}</td>
-                  <td className="p-2">{beneficiery.active}</td>
+                <tr key={beneficiery.id} className="md:p-4">
+                  <td className="md:p-2">{beneficiery.id}</td>
+                  <td className="md:p-2 text-center">{beneficiery.name}</td>
+                  <td className="md:p-2">{beneficiery.category}</td>
+                  <td className="md:p-2 text-center">{beneficiery.supportType}</td>
+                  <td className="md:p-2">{beneficiery.active}</td>
                   <td>
                     <button
-                      className="p-1 m-1 text-gray-200 rounded-lg border-2 border-sky-300 bg-sky-500 hover:bg-sky-300 cursor-pointer"
+                      className="md:p-1 md:m-1 text-gray-200 rounded-lg border-2 border-sky-300 bg-sky-500 hover:bg-sky-300 cursor-pointer"
                       onClick={() => handleEdit(beneficiery.id)}
                     >
                       Edit
@@ -133,7 +133,7 @@ function Beneficiery() {
                   </td>
                   <td>
                     <button
-                      className="p-1 m-1 text-gray-200 rounded-lg border-2 border-red-300 bg-red-500 hover:bg-red-300 cursor-pointer"
+                      className="md:p-1 md:m-1 text-gray-200 rounded-lg border-2 border-red-300 bg-red-500 hover:bg-red-300 cursor-pointer"
                       onClick={() => handleDelete(beneficiery.id)}
                     >
                       Delete
@@ -147,9 +147,9 @@ function Beneficiery() {
         <h3 className="font-bold mt-4">Add New Beneficiery:</h3>
         <form
           onSubmit={handleSubmit}
-          className="w-full flex justify-center flex-wrap"
+          className="w-full md:flex justify-center flex-wrap"
         >
-          <div className="w-1/2 flex items-center flex-col gap-4 mt-4 ">
+          <div className="md:w-1/2 flex items-center flex-col gap-4 mt-4 ">
             <label htmlFor="id">ID:</label>
             <input
               type="text"
@@ -181,7 +181,7 @@ function Beneficiery() {
               className="w-1/2 p-2 border-2 border-gray-400 bg-gray-100 outline-0 mb-4"
             />
             </div>
-            <div className="w-1/2 flex items-center flex-col gap-4 mt-4">
+            <div className="md:w-1/2 flex items-center flex-col gap-4 mt-4">
             <label htmlFor="purpose">Support Type:</label>
             <input
               type="text"
@@ -201,12 +201,14 @@ function Beneficiery() {
               className="w-1/2 p-2 border-2 border-gray-400 bg-gray-100 outline-0"
             />
           </div>
+          <div className="md:w-1/2 flex items-center flex-col gap-4 mt-4">
           <button
             type="submit"
             className="border-2 border-blue-500 bg-blue-300 p-3 hover:bg-blue-200 "
           >
             Add Beneficiery
           </button>
+          </div>
         </form>
          <button onClick={toggleMode}>
           {mode === 'light' ? 'Dark Mode' : 'Light Mode'}
