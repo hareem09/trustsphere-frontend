@@ -85,15 +85,15 @@ function Event() {
   }
   return(
   <>
-    <main className=" ml-4 h-100vh" className={
+    <main className=" ml-4 h-lvh" className={
       mode === 'light'
         ? 'bg-gray-200 text-black'
         : 'bg-gray-800 text-gray-200 '
     }>
       <h2 className="text-center font-bold text-2xl">Event Management</h2>
       <h3 className="font-bold">Records:</h3>
-      <section className="flex justify-center">
-        <table className=" bg-gray-100 rounded-2xl w-2/4 mt-4 shadow-2xl shadow-gray-600" className={
+      <section className="flex md:justify-center">
+        <table className=" text-sm md:text-lg bg-gray-100 rounded-2xl w-2/4 mt-4 shadow-2xl shadow-gray-600" className={
       mode === 'light'
         ? 'bg-gray-100 text-black'
         : 'bg-gray-800 text-gray-200 '
@@ -107,14 +107,14 @@ function Event() {
               <th>Description</th>
             </tr>
           </thead>
-          <tbody className="p-4 m-3">
+          <tbody className="md:p-4 md:m-3">
             {eventData.map((event) => (
               <tr key={event.id} className="p-4">
-                <td className="p-2">{event.id}</td>
-                <td className="p-2 text-center">{event.title}</td>
-                <td className="p-2">{event.date}</td>
-                <td className="p-2 text-center">{event.location}</td>
-                <td className="p-2">{event.description}</td>
+                <td className="md:p-2">{event.id}</td>
+                <td className="md:p-2 text-center">{event.title}</td>
+                <td className="md:p-2">{event.date}</td>
+                <td className="md:p-2 text-center">{event.location}</td>
+                <td className="md:p-2">{event.description}</td>
                 <td>
                   <button
                     className="p-1 m-1 text-gray-200 rounded-lg border-2 border-sky-300 bg-sky-500 hover:bg-sky-300 cursor-pointer"
@@ -139,9 +139,9 @@ function Event() {
       <h3 className="font-bold mt-4">Add New Event:</h3>
       <form
         onSubmit={handleSubmit}
-        className="w-full flex justify-center flex-wrap"
+        className="w-full md:flex justify-center flex-wrap"
       >
-        <div className="w-1/2 flex items-center flex-col gap-4 mt-4 ">
+        <div className="md:w-1/2 flex items-center flex-col gap-4 mt-4 ">
           <label htmlFor="id">ID:</label>
           <input
             type="text"
@@ -172,7 +172,7 @@ function Event() {
             className="w-1/2 p-2 border-2 border-gray-400 bg-gray-100 outline-0"
           />
           </div>
-          <div className="w-1/2 flex items-center flex-col gap-4 mt-4 ">
+          <div className="md:w-1/2 flex items-center flex-col gap-4 mt-4 ">
           <label htmlFor="location">Location:</label>
           <input
             type="text"
