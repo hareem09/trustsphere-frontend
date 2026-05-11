@@ -1,10 +1,10 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 function NavBar() {
   const [storedDonation, setStoredDonation] = useState([]);
   const [storedBeneficiery, setStoredBeneficiery] = useState([]);
   const [storedEvent, setStoredEvent] = useState([]);
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState(false);
   const [searchText, setSearchText] = useState("");
 
   const [filteredData, setFilteredData] = useState({
@@ -69,53 +69,48 @@ function NavBar() {
     });
   };
 
-  const toggleMode = () => {
-    setMode(mode === "light" ? "dark " : "light");
-  };
+ useEffect(() => {
+      if (mode) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    }, [mode])
+
+  const toggleMode = () =>{
+    setMode(!mode)
+  }
   return (
     <>
       <nav
-        className="w-full  flex justify-around items-center px-4 "
-        className={
-          mode === "light"
-            ? "bg-gray-200 text-black"
-            : "bg-gray-800 text-gray-200 "
-        }
-      >
+        className="w-full  flex justify-around items-center px-4 text-gray-800 bg-gray-300 dark:text-white dark:bg-gray-800 " >
         <div className="flex items-center gap-1">
           <input
             type="search"
             name="search"
             id="search"
             placeholder="Search..."
-            className="w-lg p-1 rounded-2xl border-2 border-gray-300 bg-gray-100 shadow-2xl m-2 shadow-gray-400 outline-0"
+            className="md:w-lg p-1 rounded-2xl border-2 border-gray-300 bg-gray-100 shadow-2xl m-2 shadow-gray-400 outline-0"
             onChange={handleSearch}
             value={searchText}
           />
           <button
             onClick={clearSearch}
-            className="px-3 py-1 bg-gray-200 rounded"
-            className={
-              mode === "light"
-                ? "bg-gray-200 text-black"
-                : "bg-gray-800 text-gray-200 "
-            }
+            className="px-3 py-1 rounded  text-gray-800 bg-gray-300 dark:text-white dark:bg-gray-800 "
           >
             Clear
           </button>
         </div>
         <button onClick={toggleMode}>
-          {mode === "light" ? "Dark Mode" : "Light Mode"}
+          {mode ? "Light Mode" : "Dark Mode"}
         </button>
       </nav>
       <main
-        className="flex justify-center gap-4"
-        className={
-          mode === "light" ? "bg-gray-200 text-black" : "bg-black text-white"
-        }
+        className="w-full flex justify-center gap-4
+         text-gray-800 bg-gray-300 dark:text-white dark:bg-gray-800 "
       >
         {searchText ? (
-          <div className="w-1/2  p-4 text-center border-2 border-gray-300 bg-gray-200 shadow-2xl shadow-gray-400 rounded-2xl">
+          <div className="md:w-1/2 w-2/3  p-4 text-center border-2 border-gray-300 bg-gray-200 shadow-2xl shadow-gray-400 rounded-2xl">
             {filteredData.donations.length > 0 &&
               filteredData.donations.map((donation) => (
                 <p key={donation.id}>
@@ -147,3 +142,4 @@ function NavBar() {
   );
 }
 export default NavBar;
+
