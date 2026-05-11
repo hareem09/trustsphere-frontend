@@ -25,7 +25,7 @@ function Donation() {
     date: "",
   });
   const [isEditing, setIsEditing] = useState(false);
-   const [mode ,setMode] = useState('light')
+  
   useEffect(() => {
     const storedData = localStorage.getItem("donationData");
     if (storedData) {
@@ -55,10 +55,6 @@ function Donation() {
       ) {
         alert("Please fill all the fields");
       }
-      if(e.target.value === donationData.id){
-      alert('Donation with this ID already exists')
-      return
-    }
       setDonationData([...donationData, formData]);
       localStorage.setItem(
         "donationData",
@@ -101,26 +97,16 @@ function Donation() {
     setDonationData(data);
     localStorage.setItem("donationData", JSON.stringify(data));
   };
+  
 
-  const toggleMode = () =>{
-    setMode(mode === 'light' ?'dark ' :'light')
-   
-  }
+ 
   return (
     <>
-      <main className=" md:ml-4 h-lvh" className={
-      mode === 'light'
-        ? 'bg-gray-200 text-black'
-        : 'bg-gray-800 text-gray-200 '
-    }>
+      <main className=" ml-4 h-100vh bg-gray-300 dark:bg-gray-800 text-black dark:text-white" >
         <h2 className="text-center font-bold text-2xl">Donation Management</h2>
         <h3 className="font-bold">Records:</h3>
-        <section className="flex md:justify-center">
-        <table className=" bg-gray-100 rounded-2xl w-2/4 mt-4 shadow-2xl shadow-gray-600" className={
-      mode === 'light'
-        ? 'bg-gray-100 text-black'
-        : 'bg-gray-800 text-gray-200 '
-    }>
+        <section className="flex justify-center">
+        <table className=" bg-gray-100 dark:bg-gray-800 text-black dark:text-white rounded-2xl w-2/4 mt-4 shadow-2xl shadow-gray-600" >
           <thead>
             <tr className="head   ">
               <th>ID</th>
@@ -223,9 +209,7 @@ function Donation() {
             </button>
           </div>
         </form>
-         <button onClick={toggleMode}>
-          {mode === 'light' ? 'Dark Mode' : 'Light Mode'}
-        </button>
+        
       </main>
     </>
   );
