@@ -9,7 +9,7 @@ function Beneficiery() {
     active:''
   });
   const [isEditing, setIsEditing] = useState(false);
-   const [mode ,setMode] = useState('light')
+  
   useEffect(() => {
     const storedData = localStorage.getItem("beneficieryData");
     if (storedData) {
@@ -85,27 +85,16 @@ function Beneficiery() {
     setBeneficieryData(filteredData);
     localStorage.setItem("beneficieryData", JSON.stringify(filteredData));
   };
-  const toggleMode = () =>{
-    setMode(mode === 'light' ?'dark ' :'light')
-   
-  }
+  
   return (
     <>
-      <main className=" md:ml-4 md:h-lvh min-h-5/6 " className={
-      mode === 'light'
-        ? 'bg-gray-200 text-black'
-        : 'bg-gray-800 text-gray-200 '
-    }>
+      <main className="md:ml-4  min-h-5/6  bg-gray-300 dark:bg-gray-800 text-black dark:text-white">
         <h2 className="text-center font-bold text-2xl">
           Beneficiery Management
         </h2>
         <h3 className="font-bold">Records:</h3>
-        <section className="flex md:justify-center">
-          <table className=" bg-gray-100 text-sm md:text-lg rounded-2xl w-2/4 mt-4 shadow-2xl shadow-gray-600"className={
-      mode === 'light'
-        ? 'bg-gray-100 text-black'
-        : 'bg-gray-800 text-gray-200 '
-    }>
+        <section className=" flex md:justify-center">
+          <table className="text-sm md:text-lg rounded-2xl md:w-2/4 w-2/6 mt-4 shadow-2xl shadow-gray-600 bg-gray-300 dark:bg-gray-800 text-black dark:text-white">
             <thead >
               <tr className="head   ">
                 <th>ID</th>
@@ -115,7 +104,7 @@ function Beneficiery() {
                 <th>isActive</th>
               </tr>
             </thead>
-             <tbody className="md:p-4 md:m-3" >
+            <tbody className="md:p-4 md:m-3" >
               {beneficieryData.map((beneficiery) => (
                 <tr key={beneficiery.id} className="md:p-4">
                   <td className="md:p-2">{beneficiery.id}</td>
@@ -210,9 +199,7 @@ function Beneficiery() {
           </button>
           </div>
         </form>
-         <button onClick={toggleMode}>
-          {mode === 'light' ? 'Dark Mode' : 'Light Mode'}
-        </button>
+        
       </main>
     </>
   );
